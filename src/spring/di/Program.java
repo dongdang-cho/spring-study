@@ -23,17 +23,12 @@ public class Program {
 		console.setExam(exam);
 		*/
 		ApplicationContext context = new ClassPathXmlApplicationContext("spring/di/setting.xml ");
-		Exam exam = context.getBean(Exam.class);
-		System.out.println(exam);
+	
 		//ExamConsole console = (ExamConsole)context.getBean("console");
 		ExamConsole console = context.getBean(ExamConsole.class);
 		console.print();
 		
-		List<Exam> exams = (List<Exam>)context.getBean("exams");
-		
-		for(Exam e: exams) {
-			System.out.println(e);
-		}
+		 
 	}
 
 }
