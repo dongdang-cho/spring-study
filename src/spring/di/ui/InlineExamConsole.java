@@ -8,12 +8,13 @@ import spring.di.entity.Exam;
 
 @Component
 public class InlineExamConsole implements ExamConsole {
-	@Autowired(required = false)
-	//@Qualifier("exam2")
+	@Autowired(required = true)
+	@Qualifier("exam2")
 	private Exam exam;
 	public InlineExamConsole() {
 		// TODO Auto-generated constructor stub
 		System.out.println("default constructor");
+		
 	}
 	public InlineExamConsole(Exam exam) {
 		super();
@@ -23,7 +24,6 @@ public class InlineExamConsole implements ExamConsole {
 	
 	@Override
 	public void print() {
-		// TODO Auto-generated method stub
 		if(exam == null) 
 			System.out.printf("total is %d, avg is %f\n",0, 0f);
 		else 

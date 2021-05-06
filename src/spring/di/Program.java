@@ -1,18 +1,10 @@
 package spring.di;
 
-import java.io.Console;
-import java.util.ArrayList;
-import java.util.List;
-
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import spring.di.entity.Exam;
-import spring.di.entity.NewlecExam;
 import spring.di.ui.ExamConsole;
-import spring.di.ui.GridExamConsole;
-import spring.di.ui.InlineExamConsole;
 
 public class Program {
 
@@ -24,8 +16,9 @@ public class Program {
 		console.setExam(exam);
 		*/
 		ApplicationContext context = new AnnotationConfigApplicationContext(NewlecDIConfig.class);
-	
 		ExamConsole console = (ExamConsole)context.getBean("console");
+		Exam exam2 = (Exam)context.getBean("exam2");
+		System.out.println("exam2->"+exam2.total());
 		//ExamConsole console = context.getBean(ExamConsole.class);
 		console.print();
 		

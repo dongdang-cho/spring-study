@@ -5,18 +5,19 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class NewlecExam implements Exam {
-	@Value("20")
+	
 	private int kor;
-	@Value("30")
+	
 	private int eng;
-	@Value("40")
+	
 	private int math;
-	@Value("10")
+	
 	private int com;
 	
 	public NewlecExam() {
 		super();
 		// TODO Auto-generated constructor stub
+		System.out.println("디폴트");
 	}
 
 	public NewlecExam(int kor, int eng, int math, int com) {
@@ -25,6 +26,7 @@ public class NewlecExam implements Exam {
 		this.eng = eng;
 		this.math = math;
 		this.com = com;
+		System.out.println("오버로드");
 	}
 	
 
